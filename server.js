@@ -25,6 +25,6 @@ io.on('connection',socket=>{
         delete users[socket.id];
     });    
 });
-http.listen(3000,()=>{
+http.listen(port,()=>{
     console.log('Server running on port:3000');
 });
