@@ -1,11 +1,11 @@
-// const express=require('express');
-// const app=express();
-// const server=require('http').Server(app);
-// app.use(express.static('views'));
-// app.get('/',(request,response)=>{
-//     response.sendFile(`${__dirname}/views/chat.html`);
-// });
-const io=require('socket.io')(3000);
+const express=require('express');
+const app=express();
+const http=require('http').createServer(app);
+app.use(express.static(`${__dirname}/public`));
+app.get('/',(request,response)=>{
+    response.sendFile(`${__dirname}/chat.html`);    
+});
+const io=require('socket.io')(http);
 const users={};
 io.on('connection',socket=>{
     socket.on('new-user-joined',details=>{
@@ -24,6 +24,6 @@ io.on('connection',socket=>{
         delete users[socket.id];
     });    
 });
-// app.listen(3000,()=>{
-//     console.log('Server running on port:3000');
-// })
+http.listen(3000,()=>{
+    console.log('Server running on port:3000');
+});
