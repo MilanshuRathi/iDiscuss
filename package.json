@@ -1,0 +1,24 @@
+{
+  "name": "idiscuss",
+  "version": "1.0.0",
+  "description": "a chatting room ",
+  "main": "server.js",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MilanshuRathi/iDiscuss.git"
+  },
+  "author": "Milanshu Rathi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MilanshuRathi/iDiscuss/issues"
+  },
+  "homepage": "https://github.com/MilanshuRathi/iDiscuss#readme"
+}
