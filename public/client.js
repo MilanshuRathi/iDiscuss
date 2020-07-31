@@ -45,16 +45,19 @@ socket.on('user-joined',data=>{
     newUser.message=message;     
     play();    
     messageAppend(newUser,'left');
+    scrollToBottom();
 });
 socket.on('recieve',data=>{
     // console.log(data);
     play();
     messageAppend(data,'left');
+    scrollToBottom();
 });
 socket.on('left',userData=>{
     if(userData&&userData.name)
     {userData.message='Left the chat';
     messageAppend(userData,'left');}
+    scrollToBottom();
 });
 form.addEventListener('submit',event=>{
     event.preventDefault();  
@@ -62,5 +65,9 @@ form.addEventListener('submit',event=>{
     newUser.message=msgInput.value;      
     messageAppend(newUser,'right');
     msgInput.value='';
-    socket.emit('send',newUser.message);       
+    socket.emit('send',newUser.message);  
+    scrollToBottom();     
 });
+function scrollToBottom() {
+  msgContainer.scrollTop = msgContainer.scrollHeight;
+};
