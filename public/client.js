@@ -34,7 +34,7 @@ const messageAppend=(userDetails,position)=>{
 }
 // const notiAppend=(message,)
 //Main Execution starts
-const name=prompt('Enter your Nick Name to join','Maddy');
+const name=prompt('Enter your Nick Name to join');
 const gender=prompt('Enter your gender:(male or female)').toLowerCase();
 const imageUrl=gender==='male'?male[Math.floor(Math.random()*3)]:female[Math.floor(Math.random()*3)];
 const user={name,gender,imageUrl};
