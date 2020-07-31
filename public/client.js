@@ -34,8 +34,10 @@ const messageAppend=(userDetails,position)=>{
 }
 // const notiAppend=(message,)
 //Main Execution starts
-const name=prompt('Enter your Nick Name to join');
-const gender=prompt('Enter your gender:(male or female)').toLowerCase();
+let name='';
+while(name==='') name=prompt('Enter your Nick Name to join');
+let gender='';
+while(gender==='') gender=prompt('Enter your gender:(male or female)').toLowerCase();
 const imageUrl=gender==='male'?male[Math.floor(Math.random()*3)]:female[Math.floor(Math.random()*3)];
 const user={name,gender,imageUrl};
 socket.emit('new-user-joined',user);
