@@ -2,7 +2,7 @@
 
 Realtime chat app using socket.io and vanilla JavaScript
 
-
+Check out the [Live Version](https://idiscuss.herokuapp.com/ "Live Version")
 ### Dependencies 
     1. Express
     2. Socket.io
