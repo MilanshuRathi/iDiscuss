@@ -35,9 +35,9 @@ const messageAppend=(userDetails,position)=>{
 // const notiAppend=(message,)
 //Main Execution starts
 let name='';
-while(name==='') name=prompt('Enter your Nick Name to join');
+while(name.trim()==='') name=prompt('Enter your Nick Name to join');
 let gender='';
-while(gender==='') gender=prompt('Enter your gender:(male or female)').toLowerCase();
+while(gender!=='male'&&gender!=='female') gender=prompt('Enter your gender:(male or female)').toLowerCase();
 const imageUrl=gender==='male'?male[Math.floor(Math.random()*3)]:female[Math.floor(Math.random()*3)];
 const user={name,gender,imageUrl};
 socket.emit('new-user-joined',user);
@@ -63,12 +63,13 @@ socket.on('left',userData=>{
 });
 form.addEventListener('submit',event=>{
     event.preventDefault();  
+    if(msgInput.value.trim()!==''){
     const newUser={...user};
-    newUser.message=msgInput.value;      
+    newUser.message=msgInput.value.trim();      
     messageAppend(newUser,'right');
     msgInput.value='';
     socket.emit('send',newUser.message);  
-    scrollToBottom();     
+    scrollToBottom();}     
 });
 function scrollToBottom() {
   msgContainer.scrollTop = msgContainer.scrollHeight;
