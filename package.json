@@ -4,7 +4,7 @@
   "description": "a chatting room ",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "socket.io": "^2.3.0",
     "nodemon":"^2.0.4"
   },
